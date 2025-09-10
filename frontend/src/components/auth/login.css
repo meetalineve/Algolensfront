@@ -1,0 +1,142 @@
+/* frontend/src/components/auth/login.css */
+
+/* Ensures consistent off-white background for the entire page */
+body {
+  background-color: #f5f5f5; /* Soft off-white background */
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Main title styling */
+.algo-main-title {
+  font-family: "Press Start 2P", system-ui;
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Login container with flexbox to center */
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Form container with background, shadow, and padding */
+.login-form-container {
+  width: 100%;
+  max-width: 400px;
+  background-color: #f8f8f8; /* Soft background */
+  border: 1px solid #ddd;
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.09);
+}
+
+/* Flexbox layout for the form fields */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Styling for each form group */
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Styling the label with font properties */
+.form-group label {
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 10;
+  font-size: 18px;
+  color: #333;
+}
+
+/* Input fields with padding, border, and transition on focus */
+.form-group input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: "IBM Plex Mono", monospace;
+  transition: border-color 0.3s ease;
+}
+
+/* Focus styling for input fields */
+.form-group input:focus {
+  outline: none;
+  border-color: #00b5e5;
+  box-shadow: 0 0 0 2px rgba(0, 181, 229, 0.2);
+}
+
+/* Error message styling */
+.error-message {
+  background-color: #ffecec;
+  color: #f44336;
+  padding: 10px;
+  border-radius: 4px;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 12px;
+  text-align: center;
+}
+
+/* Styling for the action buttons */
+.form-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+/* Styling for the login button */
+.login-button {
+  background-color: #00b5e5;
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  font-family: "Press Start 2P", system-ui;
+  font-size: 12px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+/* Button hover effect */
+.login-button:hover {
+  background-color: #0095bd;
+}
+
+/* Disabled state for the button */
+.login-button:disabled {
+  background-color: #a5e0f1;
+  cursor: not-allowed;
+}
+
+/* Footer styling for the form */
+.login-footer {
+  text-align: center;
+  margin-top: 10px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  color: #555;
+}
+
+.login-footer p {
+  margin: 5px 0;
+}
+
+/* Links styling for signup and forgot password */
+.signup-link, .forgot-password-link {
+  color: #00b5e5;
+  text-decoration: none;
+}
+
+/* Hover effect for the links */
+.signup-link:hover, .forgot-password-link:hover {
+  text-decoration: underline;
+}

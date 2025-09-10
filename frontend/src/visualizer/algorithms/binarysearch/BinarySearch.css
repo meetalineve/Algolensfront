@@ -1,0 +1,147 @@
+/* Binary Search specific styles to supplement AlgorithmLayout.css */
+
+/* Animation for found element */
+@keyframes pulse {
+    0% { transform: translateY(-10px) scale(1); }
+    50% { transform: translateY(-10px) scale(1.05); }
+    100% { transform: translateY(-10px) scale(1); }
+  }
+  
+  /* Input field styles */
+  .binary-search-inputs input {
+    padding: 8px 12px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  .binary-search-inputs button {
+    padding: 8px 16px;
+    background-color: #000;
+    color: #00bcf2;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+  }
+  
+  .binary-search-inputs button:hover {
+    background-color: #333;
+  }
+  
+  /* Reset button specific style */
+  .binary-search-inputs button.reset-button {
+    background-color: #6c757d;
+    color: white;
+  }
+  
+  .binary-search-inputs button.reset-button:hover {
+    background-color: #5a6268;
+  }
+  
+  /* Array element styles */
+  .array-element {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #dee2e6;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 18px;
+    position: relative;
+    transition: all 0.3s ease;
+  }
+  
+  .index-label {
+    position: absolute;
+    bottom: -20px;
+    font-size: 12px;
+    color: #6c757d;
+  }
+  
+  .lower-bound-element {
+    background-color: rgba(220, 53, 69, 0.1);
+    border-color: #dc3545;
+  }
+  
+  .mid-element {
+    background-color: rgba(40, 167, 69, 0.1);
+    border-color: #28a745;
+    transform: translateY(-10px);
+  }
+  
+  .upper-bound-element {
+    background-color: rgba(23, 162, 184, 0.1);
+    border-color: #17a2b8;
+  }
+  
+  .target-element {
+    background-color: rgba(255, 193, 7, 0.1);
+    border-color: #ffc107;
+  }
+  
+  .found-element {
+    background-color: rgba(40, 167, 69, 0.2);
+    border-color: #28a745;
+    transform: translateY(-10px);
+    animation: pulse 1s infinite;
+  }
+  
+  .not-in-range {
+    opacity: 0.3;
+  }
+  
+  /* Status messages */
+  .alert {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 4px;
+  }
+  
+  .alert-danger {
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    color: #721c24;
+  }
+  
+  /* Step information styles */
+  .iteration-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+    margin-bottom: 15px;
+  }
+  
+  .bounds-info {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .bound {
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-weight: bold;
+  }
+  
+  .comparison-info {
+    text-align: center;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+  
+  .array-visualization {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 20px 0;
+  }

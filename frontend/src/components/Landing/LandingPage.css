@@ -1,0 +1,529 @@
+/* frontend/src/components/landing/LandingPage.css */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200');
+
+/* icons */
+.star-icon {
+    font-size: 20px; 
+    color: #8b8b8b;
+    transition: color 0.3s ease;
+    font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 20; 
+}
+
+.star-icon:hover {
+    color: #ffd700;   
+    cursor: pointer;  
+}
+
+.star-icon.selected {
+    color: #ffd700;
+    font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 20;
+}
+
+.bolt {
+    color: #ffd700; 
+    font-size: 20px; 
+    font-variation-settings: 'FILL' 1, 'wght' 300, 'GRAD' 0, 'opsz' 20;
+}
+
+.search {
+    color: #8b8b8b; 
+    font-size: 25px; 
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 20;
+}
+
+/* bg particles */
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+    z-index: -1;
+}
+
+/* Fix for the layout to push footer to bottom */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Arial';
+    overflow-x: hidden;
+    min-height: 100vh; /* Ensure minimum height is full viewport */
+}
+
+#main-container {
+    flex: 1 0 auto; /* Flex grow to take available space */
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh - 60px); /* Subtract footer height */
+}
+
+main {
+    flex: 1; /* Allow main content to grow and fill space */
+}
+
+/* home page */
+#navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000;
+    padding: 10px 50px;
+    border-bottom: 1px solid #222;
+}
+
+#left-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#logo {
+    font-weight: bold;
+    font-size: 20px;
+    font-family: "Press Start 2P", system-ui; 
+}
+
+.logo-white {
+    color: white;
+}
+
+.logo-blue {
+    color: #00b5e5; 
+}
+
+#logo small {
+    color: #ccc;
+    font-family: 'Arial', sans-serif; 
+    font-size: 8px;
+}
+
+#right-login {
+    background-color: transparent;
+    color: #00b5e5;
+    border: 1px solid #00b5e5;
+    padding: 5px 5px;
+    font-size: 10px;
+    font-family: "Press Start 2P", system-ui; 
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+#right-login:hover {
+    background-color: #00b5e5;
+    color: #000;
+}
+
+/* User Nav Container Styles */
+.user-nav-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.username-display {
+    color: white;
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+}
+
+.profile-btn, #logout-btn {
+    background-color: transparent;
+    color: #00b5e5;
+    border: 1px solid #00b5e5;
+    padding: 5px 5px;
+    font-size: 10px;
+    font-family: "Press Start 2P", system-ui; 
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.profile-btn:hover, #logout-btn:hover {
+    background-color: #00b5e5;
+    color: #000;
+}
+
+.loading-auth {
+    color: white;
+    font-size: 12px;
+}
+
+#space-before {
+    width: 100%;
+    height: 50px;
+}
+
+.title-container {
+    text-align: center; 
+    margin-top: 50px;
+}
+
+#title {
+    font-family: "Press Start 2P", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 60px;
+    margin: 0;
+}
+
+.title-black {
+    color: rgb(0, 0, 0);
+}
+
+.title-blue {
+    color: #00b5e5;
+}
+
+.subtitle {
+    color: #666666;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    margin-top: 0px;
+    font-style: italic;
+}
+
+.search-container {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    padding-bottom: 8px;
+}
+
+.search-container form {
+    position: relative; 
+    display: flex;
+    align-items: center;
+}
+
+.search-container input {
+    width: 350px;
+    height: 25px; 
+    padding: 20px 20px;
+    font-size: 18px;
+    border-radius: 25px;
+    padding-right: 45px;
+    border: none;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.15);
+    transition: 0.4s ease-in-out;
+    outline: none; 
+}
+
+.search-container input:focus {
+    width: 500px;
+    box-shadow: 0px 2px 8px rgba(0, 181, 229, 0.3);
+}
+
+.search-container button {
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: #555;
+    cursor: pointer;
+}
+
+.tag-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 5px;
+}
+
+.tag {
+    background-color: transparent;
+    color: #8b8b8b;
+    border: 1px solid #8b8b8b;
+    padding: 4px 8px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.tag:hover {
+    background-color: #00b3e572;
+    color: #000;
+}
+
+.tag.active {
+    background-color: #00b3e572;
+    color: #000;
+}
+
+.all-algos-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    padding: 20px;
+    margin-bottom: 40px; /* Add margin to ensure space before footer */
+}
+
+.algo-box {
+    width: 265px;
+    height: 260px;
+    background-color: #daf0ff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.01);
+    margin-bottom: 15px;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.algo-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.algo-image {
+    height: 170px; 
+    margin: 10px;
+    overflow: hidden;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f8ff;
+}
+
+.algo-image img {
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.algo-box:hover .algo-image img {
+    transform: scale(1.05);
+}
+
+.algo-title {
+    font-weight: bold;
+    font-size: 16px;
+    padding: 5px 10px 2px;
+    font-family: Arial, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    gap: 5px;
+}
+
+.algo-title a {
+    text-decoration: none;
+    color: #333;
+    transition: color 0.2s;
+}
+
+.algo-title a:hover {
+    color: #00b5e5;
+}
+
+.algo-tags {
+    padding: 0 10px 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.algo-box .tag {
+    font-size: 11px;
+    padding: 1px 5px;
+    background-color: rgba(0, 181, 229, 0.1);
+}
+
+.algo-box .tag:hover {
+    background-color: rgba(0, 181, 229, 0.3);
+}
+
+/* Footer Styles */
+.footer {
+    width: 100%;
+    background-color: #000;
+    color: white;
+    padding: 15px 0;
+    margin-top: auto; /* Push to bottom */
+    position: relative;
+    z-index: 2;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 0 20px;
+}
+
+.footer-link {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.footer-link:hover {
+    color: #00b5e5;
+}
+
+/* Modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 60%;
+    max-width: 700px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    animation: modalopen 0.3s;
+}
+
+@keyframes modalopen {
+    from {opacity: 0; transform: translateY(-50px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.modal-header h2 {
+    margin: 0;
+    font-family: "Press Start 2P", system-ui;
+    font-size: 20px;
+    color: #00b5e5;
+}
+
+.close-button {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close-button:hover {
+    color: #00b5e5;
+}
+
+.modal-body {
+    line-height: 1.6;
+}
+
+.modal-body p, .modal-body ul {
+    margin-bottom: 15px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .all-algos-container {
+        padding: 10px;
+    }
+    
+    .algo-box {
+        width: calc(50% - 10px);
+    }
+    
+    #title {
+        font-size: 40px;
+    }
+    
+    .search-container input {
+        width: 250px;
+    }
+    
+    .search-container input:focus {
+        width: 300px;
+    }
+    
+    .modal-content {
+        width: 85%;
+        margin: 15% auto;
+    }
+    
+    #navbar {
+        padding: 10px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .algo-box {
+        width: 100%;
+    }
+    
+    .tag-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    #navbar {
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+}
+
+.username-display {
+    color: white;
+    font-family: "Press Start 2P", system-ui;
+    font-size: 12px;
+}
+
+/* Modify the user-nav-container to only show username and profile button */
+.user-nav-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* The logout button styling can stay in the CSS for the profile page */
+#logout-btn {
+    background-color: transparent;
+    color: #00b5e5;
+    border: 1px solid #00b5e5;
+    padding: 5px 5px;
+    font-size: 10px;
+    font-family: "Press Start 2P", system-ui;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+#logout-btn:hover {
+    background-color: #00b5e5;
+    color: #000;
+}
